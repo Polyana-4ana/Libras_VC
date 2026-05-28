@@ -1,22 +1,24 @@
 import cv2
 import mediapipe as mp
-import csv
+import joblib
+import numpy as np
 
-# Carrega detector de mãos
+# Carrega modelo treinado
+modelo = joblib.load(
+    "models/libras_model.pkl"
+)
+
+# MediaPipe
 mp_hands = mp.solutions.hands
 
 hands = mp_hands.Hands(
     max_num_hands=1
 )
 
-# Ferramenta para desenhar pontos
 mp_draw = mp.solutions.drawing_utils
 
-# Abre webcam
+# Webcam
 cap = cv2.VideoCapture(0)
-
-# Classe atual
-classe = "oi"
 
 while True:
 
@@ -25,14 +27,14 @@ while True:
     if not sucesso:
         break
 
-    # Converte BGR → RGB
     rgb = cv2.cvtColor(
         img,
         cv2.COLOR_BGR2RGB
     )
 
-    # Detecta mão
     resultado = hands.process(rgb)
+
+    palavra = ""
 
     if resultado.multi_hand_landmarks:
 
@@ -52,27 +54,15 @@ while True:
                     [lm.x,lm.y,lm.z]
                 )
 
-            tecla=cv2.waitKey(1)
+            dados=np.array(dados).reshape(1,-1)
 
-            if tecla==ord("s"):
-
-                with open(
-                    f"dataset/{classe}.csv",
-                    "a",
-                    newline=""
-                ) as f:
-
-                    writer=csv.writer(f)
-
-                    writer.writerow(dados)
-
-                    print(
-                        "Exemplo salvo"
-                    )
+            palavra = modelo.predict(
+                dados
+            )[0]
 
     cv2.putText(
         img,
-        f"Gesto: {classe}",
+        f"Previsao: {palavra}",
         (10,50),
         cv2.FONT_HERSHEY_SIMPLEX,
         1,
@@ -81,7 +71,7 @@ while True:
     )
 
     cv2.imshow(
-        "Coleta de Dados",
+        "IA Libras",
         img
     )
 

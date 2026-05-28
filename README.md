@@ -1,32 +1,118 @@
-# 🤟 Libras Vision Demo
+# Libras Vision AI
 
-Este projeto é uma demonstração inicial de reconhecimento de gestos de Libras em tempo real utilizando visão computacional.
+AI-powered Brazilian Sign Language (Libras) recognition system using Computer Vision and Machine Learning.
 
-## 🚀 Tecnologias utilizadas
-- Python
-- OpenCV
-- MediaPipe
+## Overview
 
-## 🎯 Funcionalidades
-- Detecção de mão em tempo real
-- Reconhecimento de gestos simples
-- Formação de frases na tela
+This project aims to improve accessibility for the deaf community by translating Libras gestures into text in real time using Artificial Intelligence.
 
-## 💡 Objetivo
-Este projeto faz parte de uma iniciativa maior para desenvolver um sistema de acessibilidade voltado ao atendimento ao público, permitindo a comunicação entre pessoas surdas e ouvintes através de tecnologia.
+The system uses:
+- Computer Vision
+- Hand Landmark Detection
+- Machine Learning
+- Real-time gesture prediction
 
-## 📈 Próximos passos
-- Implementar Machine Learning para melhorar a precisão
-- Criar aplicação mobile
-- Integrar com API backend
-- Evoluir para reconhecimento de frases mais complexas
-
-## 📌 Status
-🚧 Em desenvolvimento
+Future applications include:
+- Customer service
+- Healthcare assistance
+- Ride-sharing communication
+- Public service accessibility
 
 ---
 
-Criado com ❤️ para promover acessibilidade através da tecnologia.
+## Technologies
 
-📄 Licença
-Este projeto está sob a licença MIT.
+### AI & Computer Vision
+- Python
+- OpenCV
+- MediaPipe
+- Scikit-Learn
+- NumPy
+- Pandas
+
+### Backend (future architecture)
+- Java
+- Spring Boot
+- JWT Authentication
+- WebSockets
+- PostgreSQL
+
+### Infrastructure (future)
+- Docker
+- Kubernetes
+
+---
+
+## Current Features
+
+- Real-time hand detection
+- Hand landmark extraction
+- Dataset collection pipeline
+- Machine Learning training pipeline
+- Real-time gesture prediction
+- Model persistence with Joblib
+
+---
+
+## Project Architecture
+
+Frontend (future)
+↓
+Java Spring Boot API Gateway
+↓
+Python AI Microservice
+↓
+Machine Learning Prediction
+
+---
+
+## Machine Learning Pipeline
+
+Camera Input
+↓
+MediaPipe Hand Tracking
+↓
+Landmark Extraction (21 points)
+↓
+Dataset Generation
+↓
+Model Training
+↓
+Real-time Prediction
+
+---
+
+## Dataset Structure
+
+Each gesture sample contains:
+- 21 hand landmarks
+- x, y, z coordinates
+- 63 features per sample
+
+---
+
+## Goals
+
+- Real-time Libras translation
+- Multi-user gesture recognition
+- AI-powered accessibility solution
+- Production-ready microservice architecture
+
+---
+
+## Future Improvements
+
+- Deep Learning models (LSTM / CNN)
+- Sentence recognition
+- Voice synthesis
+- Mobile application
+- Cloud deployment
+- Kubernetes orchestration
+
+---
+
+## Author
+
+Polyana SS
+
+Computer Science / AI Enthusiast
