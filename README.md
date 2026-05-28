@@ -115,9 +115,5 @@ Each gesture sample contains:
 
 Polyana SS
 
-Computer Science / AI Enthusiast
-
-Criado com ❤️ para promover acessibilidade através da tecnologia.
-
-📄 Licença
-Este projeto está sob a licença MIT.
+📄 License
+This project is licensed under the MIT license.
